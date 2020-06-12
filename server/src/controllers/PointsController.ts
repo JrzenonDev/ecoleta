@@ -66,9 +66,11 @@ class PointsController {
 
     await trx('point_items').insert(pointItems);
 
+    await trx.commit();
+
     return response.json({
       id: point_id,
-      ... point, // stred operator = pega todas informações que tem dentro de um objeto
+      ...point, // stred operator = pega todas informações que tem dentro de um objeto
     });
 
   }
